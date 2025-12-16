@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# BLUE HAT HACKING
+# Scan the web content of fakebank.thm, using the 'dirb' command.
+# Exploit any available security vulnerability.
+
+dirb http://fakebank.thm
