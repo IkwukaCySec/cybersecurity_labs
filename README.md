@@ -43,24 +43,6 @@ This repo was created to:
 
 ---
 
-## 📂 Repository Structure
-cybersecurity_labs/
-├── tryhackme/
-│ ├── soc_level_1/
-│ └── advent_of_cyber/
-├── forage/
-│ ├── aig_cybersecurity/
-│ └── tata_cybersecurity/
-├── google_cybersecurity_certificate/
-│ ├── labs/
-│ └── key_lessons.md
-├── isc2_cc/
-│ ├── course_notes/
-│ └── core_security_concepts.md
-└── README.md
-
----
-
 ## 🧪 Programs & Hands-On Experience
 
 ### 🔹 TryHackMe
