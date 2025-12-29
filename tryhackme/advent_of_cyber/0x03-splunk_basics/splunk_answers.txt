@@ -1,0 +1,16 @@
+Day 7 - Splunk Basics - Final Answers
+
+1. SHA256 of malicious ELF: 
+c3f37b85a810fe6ac1e7d226e1e7bfe0d86d0f77f5e27b40e0e7d6f179dbaa24
+
+2. Content of /home/elf/flag4.txt:
+THM{SPLUNK_IS_COOL}
+
+3. Number of events from 10.10.175.227:
+42
+
+4. User-Agent used in successful ElfU login:
+Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+
+5. Final flag:
+THM{SPLUNKING_AROUND_THE_XMAS_TREE}
