@@ -1,0 +1,34 @@
+# Day 7 – Advent of Cyber 2025 – Splunk Queries (All working queries I used)
+
+# Question 1 - Find the malicious ELF binary download
+index=main sourcetype=streamdown "*elf*"
+| head 1
+| table _raw
+
+# Alternative (more precise)
+index=main sourcetype=streamdown "xmas_elf_binary"
+| stats count by sha256
+| table sha256
+
+# Question 2 - Extract flag4.txt content
+index=main sourcetype=linux_secure "/home/elf/flag4.txt"
+| rex field=_raw "flag4.txt:(?<flag>.*)"
+| table flag
+
+# Question 3 - Count events from attacker IP
+index=main 10.10.175.227
+| stats count
+
+# Question 4 - Successful ElfU login + UserAgent
+index=main sourcetype=elfu "Login successful"
+| table useragent
+
+# Question 5 - Final flag (from Santa's dashboard or logs)
+index=main "THM{"
+| table _raw
+
+# Bonus: Timeline of the entire attack
+index=main 
+| bin _time span=1m
+| stats count by _time, sourcetype
+| timechart span=5m count by sourcetype
