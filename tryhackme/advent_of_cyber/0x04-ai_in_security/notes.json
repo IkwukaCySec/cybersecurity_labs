@@ -1,0 +1,20 @@
+{
+  "room": "AI in Security - old sAInt nick",
+  "date": "2025-12-04",
+  "difficulty": "Easy",
+  "learning_objectives": [
+    "AI as a force multiplier in offensive, defensive, and devsecops workflows",
+    "Importance of human verification of AI-generated code/exploits",
+    "Risks of over-reliance on AI (hallucinations, incomplete analysis)"
+  ],
+  "flags": {
+    "exploit_output": "REDACTED (obtained after running AI-generated script)",
+    "completion": "THM{AI_MANIA}"
+  },
+  "resources": [
+    "https://tryhackme.com/room/AIforcyber-aoc2025-y9wWQ1zRgB",
+    "MITRE ATLAS Framework for AI threats",
+    "OWASP Top 10 for LLM Applications"
+  ],
+  "tags": ["AI", "SQLi", "Red Team", "Blue Team", "Code Review"]
+}
