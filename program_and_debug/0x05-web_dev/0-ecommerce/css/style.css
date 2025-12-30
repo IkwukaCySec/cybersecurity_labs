@@ -1,0 +1,140 @@
+@import url(../css/font.css);
+
+:root {
+  /* Google fonts */
+  --Dosis: 'Dosis', Helvetica, Verdana, Arial, sans-serif;
+  --Josefin: 'Josefin', Helvetica, Verdana, Arial, sans-serif;
+  --Lato: 'Lato', Helvetica, Verdana, Arial, sans-serif;
+  --Lexend: 'Lexend', Helvetica, Verdana, Arial, sans-serif;
+  --Livvic: 'Livvic', Helvetica, Verdana, Arial, sans-serif;
+  --Open-sans: 'Open-sans', Helvetica, Verdana, Arial, sans-serif;
+  --Oswald: 'Oswald', Helvetica, Verdana, Arial, sans-serif;
+  --Roboto: 'Roboto', Helvetica, Verdana, Arial, sans-serif;
+  /* Colors */
+  --blue: #0077FF;
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+html {
+  font-size: 62.5%;   /* 16px x 62.5 = 10px = 1rem */
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: var(--Josefin);
+}
+
+/* Layout */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+header {
+  grid-area: header;
+  background-color: #000000;
+  font-family: var(--Lexend);
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* Global rules */
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+/* Header */
+header a {
+  color: #FFFFFF;
+  padding: 1rem;
+}
+
+a.brand {
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row.center {
+  justify-content: center;
+}
+
+/* Image */
+img {
+  border-radius: 0.5rem;
+}
+
+img.medium {
+  max-width: 29rem;
+  width: 100%;
+}
+
+/* Card */
+.card {
+  border: 0.1rem #C0C0C0 solid;
+  background-color: #F8F8F8;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body > * {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2rem;
+}
+
+/* Rating */
+.rating {
+  color: #F0C040;
+  margin: 0.1rem;
+}
