@@ -1,0 +1,12 @@
+# Red Team Prompts
+"Generate a Python script using requests to exploit a classic SQL injection in a login form at /login that takes username/password POST parameters. Include comments and make it easy to update the target URL."
+
+# Blue Team Prompts
+"Analyze this web server log entry for signs of attack: 198.51.100.22 - - [03/Oct/2025:09:03:11 +0100] "POST /login.php HTTP/1.1" 200 642 "-" "python-requests/2.31.0" "username=admin'+OR+'1'='1'-- -&password=""
+Explain the indicators of compromise and recommended mitigation."
+
+# Developer Prompts
+"Review this PHP code snippet for security issues:
+$username = $_POST['username'] ?? '';
+$query = "SELECT * FROM users WHERE username = '$username'";
+Explain vulnerabilities and suggest fixes."
