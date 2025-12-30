@@ -1,0 +1,49 @@
+/* GOOGLE FONTS */
+
+/* Dosis font family */
+@font-face {
+  font-family: Dosis;
+  src: url(../fonts/dosis/static/Dosis-Regular.ttf);
+}
+
+/* Josefin font family */
+@font-face {
+  font-family: Josefin;
+  src: url(../fonts/josefin-sans/static/JosefinSans-Regular.ttf);
+}
+
+/* Lato font family */
+@font-face {
+  font-family: Lato;
+  src: url(../fonts/lato/Lato-Regular.ttf);
+}
+
+/* Lexend font family */
+@font-face {
+  font-family: Lexend;
+  src: url(../fonts/lexend-deca/static/LexendDeca-Regular.ttf);
+}
+
+/* Livvic font family */
+@font-face {
+  font-family: Livvic;
+  src: url(../fonts/livvic/Livvic-Regular.ttf);
+}
+
+/* Open-Sans font family */
+@font-face {
+  font-family: Open-sans;
+  src: url(../fonts/open-sans/static/OpenSans/OpenSans-Regular.ttf);
+}
+
+/* Oswald font family */
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/oswald/static/Oswald-Regular.ttf);
+}
+
+/* Roboto font family */
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
