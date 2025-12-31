@@ -1,0 +1,12 @@
+{
+  "vulnerability": "Insecure Direct Object Reference (IDOR)",
+  "aoc_day": 5,
+  "year": 2025,
+  "room_title": "Santa’s Little IDOR",
+  "key_question": "User ID of parent with 10 children",
+  "answer": 15,
+  "type": "Horizontal Privilege Escalation",
+  "tools_used": ["Burp Suite", "Browser DevTools", "Python requests"],
+  "mitre": "T1068 - Exploitation for Privilege Escalation (partial overlap)",
+  "owasp": "A01:2021 - Broken Access Control"
+}
