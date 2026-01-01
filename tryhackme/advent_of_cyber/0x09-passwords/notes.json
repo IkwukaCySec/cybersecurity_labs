@@ -1,0 +1,27 @@
+{
+  "room_title": "Passwords — A Cracking Christmas",
+  "day": 9,
+  "year": 2025,
+  "difficulty": "Easy",
+  "files": {
+    "pdf": "santa_report.pdf",
+    "zip": "flag.zip"
+  },
+  "passwords": {
+    "pdf": "jinglebells",
+    "zip": "winter4ever"
+  },
+  "flags": {
+    "pdf_flag": "THM{J1NGL3_B3LL5_CR4CK3D}",
+    "final_flag": "THM{W1NT3R_P4SSW0RD5_4R3_W34K}"
+  },
+  "tools": ["pdfcrack", "john", "zip2john", "hashcat"],
+  "tags": ["password-cracking", "encryption", "dictionary-attack", "defense"]
+    "mask_attacks": {
+    "recommended_for_aoc_day9": [
+      "winter?d?d?d?d",
+      "?u?l?l?l?l?l?d?d",
+      "jingle?l?l?l?l?s"
+    ],
+    "why_effective": "Passwords often follow predictable patterns (seasons, policies, common bases)"
+}
