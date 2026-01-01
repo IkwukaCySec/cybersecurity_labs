@@ -1,0 +1,2 @@
+# ss -tunlp on host
+tcp   LISTEN 0      128      127.0.0.1:3306    0.0.0.0:*    users:(("mysqld",pid=1234,fd=11))

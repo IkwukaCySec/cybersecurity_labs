@@ -1,0 +1,9 @@
+$ ftp MACHINE_IP 21212
+Name: anonymous
+331 Please specify the password.
+Password:
+230 Login successful.
+ftp> ls
+tbfc_qa_key1
+ftp> get tbfc_qa_key1 -
+3aster_
