@@ -1,0 +1,7 @@
+FROM logs-*
+| WHERE destination.ip == "185.99.135.142" OR event.code IN ("4624", "4648")
+| EVAL bytes_gb = destination.bytes / 1024 / 1024 / 1024
+| STATS total_exfil_gb = SUM(bytes_gb) BY destination.ip
+| STATS beacon_count = COUNT(*) BY bin(@timestamp, 1m)
+| SORT @timestamp
+| LIMIT 100
