@@ -1,0 +1,27 @@
+{
+  "room_title": "Prompt Injection — Sched-yule Conflict",
+  "day": 8,
+  "year": 2025,
+  "difficulty": "Medium",
+  "learning_objectives": [
+    "Exploit agentic AI via prompt injection",
+    "Understand ReAct and CoT reasoning",
+    "Leak tokens through exposed logs",
+    "Bypass access controls in AI systems"
+  ],
+  "key_elements": {
+    "ai_agent": "SchedAI",
+    "vulnerable_functions": ["reset_holiday", "booking_a_calendar", "get_logs"],
+    "access_token": "TOKEN_SOCMAS"
+  },
+  "questions": {
+    "flag_question": "What is the flag provided when SOC-mas is restored in the calendar?"
+  },
+  "answers": {
+    "final_flag": "THM{XMAS_IS_COMING__BACK}"
+  },
+  "mitre_mappings": ["TA0001 - Initial Access (via AI Manipulation)", "TA0004 - Privilege Escalation (Token Theft)"],
+  "owasp": "LLM01:2023 - Prompt Injection",
+  "tools_used": ["Web Browser (Chat Interface)", "Prompt Engineering"],
+  "tags": ["ai-security", "prompt-injection", "react-framework", "llm-vulns"]
+}
