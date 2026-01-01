@@ -1,0 +1,22 @@
+{
+  "room": "Network Discovery - Scan-ta Clause",
+  "day": 7,
+  "year": 2025,
+  "target_services": {
+    "22/tcp": "SSH",
+    "80/tcp": "HTTP (defaced: Pwned by HopSec)",
+    "21212/tcp": "FTP (key1: 3aster_)",
+    "25251/tcp": "TBFC App (key2: 15_th3_)",
+    "53/udp": "DNS (key3: n3w_xm45)",
+    "3306/tcp": "MySQL (flag: THM{4ll_s3rvice5_d1sc0vered})"
+  },
+  "combined_key": "3aster_15_th3_n3w_xm45",
+  "questions": {
+    "evil_message": "Pwned by HopSec",
+    "mysql_port": "3306",
+    "final_flag": "THM{4ll_s3rvice5_d1sc0vered}"
+  },
+  "tools": ["nmap", "nc", "ftp", "dig", "ss", "mysql"],
+  "mitre": ["TA0007 (Discovery)"],
+  "owasp": "A05:2021 - Security Misconfiguration"
+}
