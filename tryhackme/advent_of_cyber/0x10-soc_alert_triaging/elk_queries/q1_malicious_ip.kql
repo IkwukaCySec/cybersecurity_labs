@@ -1,0 +1,5 @@
+# Question 1 Equivalent: Malicious external IP (most outbound connections)
+# KQL filter + aggregation in Discover or Dashboard
+destination.ip: NOT (10.0.0.0/8 OR 172.16.0.0/12 OR 192.168.0.0/16)
+# Then add aggregation: Terms on destination.ip, sort by count descending
+# Top result = malicious IP (e.g., 185.99.135.142)

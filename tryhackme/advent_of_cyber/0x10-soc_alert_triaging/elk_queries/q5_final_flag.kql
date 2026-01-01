@@ -1,0 +1,4 @@
+# Question 5 Equivalent: Search for flag pattern (example)
+message: "*THM{*" OR process.command_line: "*THM{*"
+# Or broader hunt across fields
+*THM{*

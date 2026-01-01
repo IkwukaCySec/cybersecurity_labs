@@ -1,0 +1,4 @@
+# Question 4 Equivalent: Lateral movement (admin logons from workstation)
+event.code: ("4624") AND winlog.logon.type: "3" AND user.name: NOT "*$"
+source.ip: "WORKSTATION_IP"  # Replace with workstation-07 IP
+# Aggregation: Terms on destination.host or winlog.event_data.TargetUserName

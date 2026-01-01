@@ -1,0 +1,4 @@
+# Question 3 Equivalent: Beaconing pattern visualization
+destination.ip: "185.99.135.142"
+# Visualization: Date Histogram on @timestamp (interval: 1m) → Count metric
+# Look for regular spikes every ~300 seconds (5 minutes)
