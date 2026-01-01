@@ -1,0 +1,5 @@
+# Question 4: Lateral movement to internal server
+index=main sourcetype=win_eventlog (EventCode=4624 OR EventCode=4648) 
+Logon_Type=3 Account_Name!="*$" 
+| search Src_IP IN (workstation-07_IP)
+| stats values(Dest_Host) as pivoted_hosts

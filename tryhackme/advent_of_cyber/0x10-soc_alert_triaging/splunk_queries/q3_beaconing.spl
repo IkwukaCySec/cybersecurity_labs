@@ -1,0 +1,4 @@
+# Question 3: Beaconing pattern
+index=main dest_ip=185.99.135.142
+| timechart span=1m count
+# Observe regular peaks every ~5 minutes

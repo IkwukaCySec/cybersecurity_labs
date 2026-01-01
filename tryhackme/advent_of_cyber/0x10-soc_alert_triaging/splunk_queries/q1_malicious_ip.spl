@@ -1,0 +1,4 @@
+# Question 2: Total bytes exfiltrated to malicious IP
+index=main dest_ip=185.99.135.142
+| stats sum(bytes_out) as total_exfil
+| eval total_exfil_GB = round(total_exfil/1024/1024/1024, 2)
