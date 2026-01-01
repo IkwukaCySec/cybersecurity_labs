@@ -1,0 +1,13 @@
+{
+  "room_title": "SOC Alert Triaging — Alert and Present",
+  "day": 10,
+  "year": 2025,
+  "workstation": "workstation-07",
+  "malicious_ip": "185.99.135.142",
+  "exfiltration_gb": "4.7",
+  "beacon_interval_seconds": 300,
+  "lateral_target": "server-03",
+  "final_flag": "THM{S0C_ANALYS7_M45T3RY}",
+  "tools": ["Splunk", "Suricata", "Sysmon"],
+  "tags": ["soc", "alert-triaging", "threat-hunting", "splunk", "incident-response"]
+}
