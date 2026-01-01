@@ -1,0 +1,8 @@
+graph TD
+    A[User Input] -->|Reflected| B[Server Echoes Unsanitized]
+    A -->|Stored| C[DB Persists Payload]
+    C --> D[Displays to Victims]
+    B --> E[JS Executes on Client]
+    D --> E
+    E --> F[Alert/Cookie Theft/Deface]
+    style F fill:#f00,stroke:#f66

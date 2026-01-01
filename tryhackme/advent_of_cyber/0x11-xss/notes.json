@@ -1,0 +1,14 @@
+{
+  "room_title": "XSS — Merry XSSMas",
+  "day": 11,
+  "year": 2025,
+  "types": ["reflected", "stored"],
+  "flags": {
+    "reflected": "THM{REFLECTED_XSS}",
+    "stored": "THM{STORED_XSS}",
+    "final": "THM{M3RRY_X55M45}"
+  },
+  "tools": ["Burp Suite", "XSStrike", "DOMPurify"],
+  "owasp": "A03:2021 - Injection",
+  "tags": ["xss", "web-vulns", "csp", "payloads", "detection"]
+}
