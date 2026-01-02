@@ -1,0 +1,21 @@
+title: Web Command Injection Attempt
+id: 8a9b7c6d-5e4f-3g2h-1i0j-9k8l7m6n5o4p
+status: stable
+description: Detects potential command injection in web server logs
+author: IkwukaCySec
+date: 2026-01-01
+logsource:
+    category: webserver
+detection:
+    selection:
+        c-uri|contains:
+            - ';'
+            - '|'
+            - '&&'
+            - '$('
+            - '`'
+        OR cs(User-Agent)|contains: 'curl' OR 'wget'
+    condition: selection
+falsepositives:
+    - Penetration testing
+level: high

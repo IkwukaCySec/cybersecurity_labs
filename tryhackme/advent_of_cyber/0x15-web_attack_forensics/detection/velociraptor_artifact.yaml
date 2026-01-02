@@ -1,0 +1,7 @@
+name: Windows.WebServer.Forensics
+description: Collect Apache logs and Sysmon events for web attacks
+sources:
+  - query: |
+      SELECT * FROM glob(globs='/var/log/apache2/*.log')
+  - query: |
+      SELECT * FROM pslist() WHERE Name = 'httpd.exe'
