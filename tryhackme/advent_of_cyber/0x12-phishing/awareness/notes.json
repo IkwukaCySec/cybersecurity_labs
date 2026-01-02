@@ -1,0 +1,12 @@
+{
+  "room_title": "Phishing — Phish the Season",
+  "day": 12,
+  "year": 2025,
+  "techniques": ["open-redirect", "homoglyph", "evilginx2"],
+  "flags": {
+    "basic": "THM{PH1SH1NG_5UCC355}",
+    "advanced": "THM{2F4_BYPA55_M45T3R}"
+  },
+  "tools": ["Evilginx2", "Gophish", "Sigma"],
+  "tags": ["phishing", "social-engineering", "credential-theft", "awareness"]
+}
