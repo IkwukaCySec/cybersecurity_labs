@@ -1,0 +1,7 @@
+graph TD
+    A[Web Form Input] --> B[Command Injection]
+    B --> C[cmd.exe Spawn]
+    C --> D[whoami.exe]
+    D --> E[System Recon]
+    E --> F[PowerShell Attempt]
+    style F fill:#f00,stroke:#f66
