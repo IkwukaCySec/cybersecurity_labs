@@ -1,0 +1,11 @@
+{
+  "room_title": "Web Attack Forensics — Drone Alone",
+  "day": 15,
+  "year": 2025,
+  "attack_chain": ["command-injection", "powershell", "recon"],
+  "recon_executable": "whoami.exe",
+  "powershell_attempt": "powershell.exe",
+  "tools": ["Splunk", "Sysmon", "Apache logs"],
+  "mitre": ["T1190", "T1059.001", "T1016"],
+  "tags": ["web-forensics", "command-injection", "incident-response", "dfir"]
+}
