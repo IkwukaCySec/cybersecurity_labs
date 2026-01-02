@@ -1,0 +1,5 @@
+# Recon Executable (whoami.exe)
+index=main sourcetype="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
+Image="*\\httpd.exe" 
+| table _time, ComputerName, User, Image, CommandLine, ParentImage
+| search CommandLine="*whoami*"

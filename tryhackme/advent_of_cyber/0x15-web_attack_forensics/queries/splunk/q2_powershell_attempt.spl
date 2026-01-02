@@ -1,0 +1,4 @@
+# PowerShell Injection Attempt
+index=main sourcetype="apache:error"
+[search sourcetype="apache:error" "*powershell*" | fields clientip]
+| table _time, clientip, message
