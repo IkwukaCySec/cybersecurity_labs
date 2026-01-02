@@ -1,0 +1,12 @@
+{
+  "room_title": "Containers — DoorDasher’s Demise",
+  "day": 14,
+  "year": 2025,
+  "core_vuln": "Docker socket mount",
+  "flags": {
+    "main": "THM{DOCKER_ESCAPE_SUCCESS}",
+    "bonus": "DeployMaster2025!"
+  },
+  "tools": ["Docker", "docker-compose", "Sigma"],
+  "tags": ["containers", "docker-escape", "privilege-escalation", "devsecops"]
+}
