@@ -1,0 +1,11 @@
+{
+  "room_title": "Forensics — Registry Furensics",
+  "day": 16,
+  "year": 2025,
+  "malicious_app": "DroneManager Updater",
+  "execution_path": "C:\\Users\\dispatch.admin\\Downloads\\DroneManager_Setup.exe",
+  "persistence_value": "\"C:\\Program Files\\DroneManager\\dronehelper.exe\" --background",
+  "tools": ["Registry Explorer", "Autoruns", "RegRipper"],
+  "mitre": "T1547.001",
+  "tags": ["registry-forensics", "persistence", "dfir", "windows"]
+}
