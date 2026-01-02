@@ -1,0 +1,6 @@
+graph TD
+    A[uptime-checker Container] -->|Socket Mount| B[Docker Daemon]
+    B --> C[List Containers]
+    C --> D[Exec into deployer]
+    D --> E[Read /flag.txt]
+    style E fill:#00ff00,stroke:#0f0
