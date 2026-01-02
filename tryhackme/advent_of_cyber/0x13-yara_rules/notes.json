@@ -1,0 +1,10 @@
+{
+  "room_title": "YARA Rules — YARA-ly There",
+  "day": 13,
+  "year": 2025,
+  "targets": ["HopHelper.exe", "Malhare HTA", "SantaStealer PS1"],
+  "final_flag": "THM{Y4R4_RUL35_M45T3R}",
+  "techniques": ["string-matching", "hex", "pe-module", "regex"],
+  "tools": ["YARA", "yarac", "Loki"],
+  "tags": ["yara", "malware-detection", "threat-hunting", "dfir"]
+}
