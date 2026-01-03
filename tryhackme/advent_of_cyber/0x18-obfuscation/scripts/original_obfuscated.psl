@@ -1,0 +1,13 @@
+# SantaStealer.ps1 - HEAVILY OBFUSCATED VERSION (AoC 2025 Day 18 Sample)
+# REDACTED FOR REPOSITORY - Full version contains sensitive IOCs
+
+# Example obfuscation layers (truncated):
+$a01 = 'SG' + 'ttp://c2.e' + 'vil-bunny.l' + 'ocal/api'
+$b02 = [Convert]::FromBase64String('Q0FORTktQ0FORS1BUEktSUVW')  # Truncated
+$c03 = 0x37  # XOR key hint (redacted full payload)
+
+# Simulated obfuscated IEX block:
+IEX ([Text.Encoding]::UTF8.GetString([Convert]::FromBase64String((($b02 | ForEach-Object { $_ -bxor $c03 }) -join '')))
+
+Write-Output "REDACTED - First flag would appear here after deobf: THM{C2_De0bfuscation_29838}"
+# Note: Original contains full C2 beaconing and API key XOR hex string

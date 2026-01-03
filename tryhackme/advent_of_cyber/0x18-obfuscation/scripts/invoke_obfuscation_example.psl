@@ -1,0 +1,17 @@
+# Invoke-Obfuscation Framework Example (Reference Implementation)
+# Demonstrates common techniques matching analyzed sample
+
+# Load Invoke-Obfuscation (simulated - use real module in lab)
+. Invoke-Obfuscation.ps1  # Reference: https://github.com/danielbohannon/Invoke-Obfuscation
+
+# Technique 1: String concatenation + encoding
+$ObfCmd = 'Get-P' + 'rocess' | Out-String | % {$_ -replace '[\s]',''}
+IEX $ObfCmd
+
+# Technique 2: Variable substitution
+${gEt=PrO}cess | IEX
+
+# Technique 3: AMSI bypass pattern (matching sample)
+$Vbscriptcode = '[Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer((Get-ProcAddress amsi.dll AmsiScanBuffer), [Type]::GetType("System.Object"))))'
+
+Write-Output "Invoke-Obfuscation demo complete - Matches Day 18 patterns"

