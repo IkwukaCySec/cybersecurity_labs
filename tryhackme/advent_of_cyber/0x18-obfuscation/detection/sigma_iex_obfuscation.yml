@@ -1,0 +1,21 @@
+title: Suspicious PowerShell Invoke-Expression Usage
+id: b7e8f9g0-h1i2-j3k4-l5m6-n7o8p9q0r1s2
+status: stable
+description: Detects use of Invoke-Expression with potentially obfuscated content
+author: IkwukaCySec
+date: 2026-01-01
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        Image|endswith: '\powershell.exe'
+        CommandLine|contains:
+            - 'IEX'
+            - 'Invoke-Expression'
+            - '-join'
+            - '0x'
+    condition: selection
+falsepositives:
+    - Legitimate administrative scripting
+level: medium
