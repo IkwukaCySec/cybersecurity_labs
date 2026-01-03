@@ -1,0 +1,16 @@
+{
+  "room_title": "CyberChef — Hoperation Save McSkidy",
+  "day": 17,
+  "year": 2025,
+  "passwords": {
+    "lock1": "Iamsofluffy",
+    "lock2": "Itoldyoutochangeit!",
+    "lock3": "BugsBunny",
+    "lock4": "passw0rd1",
+    "lock5": "51rBr34chBl0ck3r"
+  },
+  "final_flag": "THM{M3D13V4L_D3C0D3R_4D3P7}",
+  "tools": ["CyberChef", "CrackStation"],
+  "owasp": "LLM01: Prompt Injection",
+  "tags": ["cyberchef", "decoding", "cryptanalysis", "hash-cracking"]
+}
