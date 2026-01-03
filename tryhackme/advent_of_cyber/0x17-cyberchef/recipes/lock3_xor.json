@@ -1,0 +1,14 @@
+[
+  {
+    "op": "From Base64",
+    "args": ["A-Za-z0-9+/=", true, false]
+  },
+  {
+    "op": "XOR",
+    "args": [
+      {"option": "UTF8", "string": "cyberchef"},
+      "Hex",
+      false
+    ]
+  }
+]
