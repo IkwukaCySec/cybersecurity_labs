@@ -1,0 +1,16 @@
+title: Suspicious Obfuscated Network Traffic
+id: 9o8p7q6r-5t4u-3v2w-1x0y-z9a8b7c6d5e4
+status: stable
+description: Detects potential encoded payloads in HTTP traffic
+author: IkwukaCySec
+date: 2026-01-01
+logsource:
+    category: network
+detection:
+    selection:
+        cs-bytes > 500
+        AND c-uri|contains: 'A-Za-z0-9+/='
+    condition: selection
+falsepositives:
+    - Legitimate API calls
+level: medium
