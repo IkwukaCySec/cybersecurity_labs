@@ -1,0 +1,13 @@
+{
+  "room_title": "Race Conditions — Toy to The World",
+  "day": 20,
+  "year": 2025,
+  "vulnerable_endpoint": "/checkout",
+  "items": {
+    "sleightoy": {"id": 1, "flag": "THM{WINNER_OF_R@CE007}"},
+    "bunny_plush": {"id": 2, "flag": "THM{WINNER_OF_BUNNY_R@CE}"}
+  },
+  "mitigation_primary": "Database row locking",
+  "tools": ["Flask", "Burp", "Python threading", "SQLite"],
+  "tags": ["race-condition", "business-logic", "web-security", "devsecops"]
+}
