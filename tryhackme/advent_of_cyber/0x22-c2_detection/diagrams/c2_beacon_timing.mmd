@@ -1,0 +1,9 @@
+graph TD
+    subgraph Regular Beaconing
+    A1[0s] --> A2[300s] --> A3[600s] --> A4[900s]
+    end
+    subgraph Irregular with Jitter
+    B1[0s] --> B2[280s] --> B3[620s] --> B4[850s]
+    end
+    style A1 fill:#0f0
+    style B1 fill:#f96
