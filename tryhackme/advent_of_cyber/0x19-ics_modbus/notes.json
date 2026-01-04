@@ -1,0 +1,13 @@
+{
+  "room_title": "ICS/Modbus — Claus for Concern",
+  "day": 19,
+  "year": 2025,
+  "port": 502,
+  "vulnerable_function_codes": [6, 16],
+  "critical_register": 40005,
+  "restore_value": 1,
+  "final_flag": "THM{eGgMas0V3r}",
+  "mitre_ics": "T0858",
+  "tools": ["pymodbus", "Suricata", "Sigma"],
+  "tags": ["ics", "modbus", "ot-security", "plc"]
+}
