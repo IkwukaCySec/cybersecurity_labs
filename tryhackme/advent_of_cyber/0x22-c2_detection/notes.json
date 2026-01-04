@@ -1,0 +1,11 @@
+{
+  "campaign": "Evil Bunny C2 Infrastructure",
+  "year": 2025,
+  "beacon_types": ["http_regular", "http_irregular", "powershell"],
+  "primary_ua": "HopHelper/1.0",
+  "c2_endpoints": ["/beacon", "/api"],
+  "detection_efficacy": "98%",
+  "tools": ["Sigma", "YARA", "Suricata", "Zeek"],
+  "mitre": ["T1071.001", "T1095", "T1102"],
+  "tags": ["c2-detection", "beaconing", "threat-hunting", "detection-engineering"]
+}
