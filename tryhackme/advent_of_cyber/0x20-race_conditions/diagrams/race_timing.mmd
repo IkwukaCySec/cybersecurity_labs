@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant T1 as Thread 1
+    participant T2 as Thread 2
+    participant DB as Database
+    
+    T1->>DB: Read stock = 1
+    T2->>DB: Read stock = 1
+    T1->>DB: Check >0 → Pass
+    T2->>DB: Check >0 → Pass
+    T1->>DB: Decrement → 0
+    T2->>DB: Decrement → -1
+    Note right of DB: Negative Stock!
