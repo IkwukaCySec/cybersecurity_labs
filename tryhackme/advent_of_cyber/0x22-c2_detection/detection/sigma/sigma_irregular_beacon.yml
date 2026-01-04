@@ -1,0 +1,19 @@
+title: Irregular C2 Beaconing with Jitter
+id: b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7
+status: experimental
+description: Detects beaconing with variable intervals (evasion technique)
+author: IkwukaCySec
+date: 2026-01-01
+logsource:
+    category: proxy
+detection:
+    selection:
+        c-method: POST
+        cs-host|endswith: 
+            - '.local'
+            - 'evil-bunny'
+    timeframe: 1h
+    condition: selection | count() by c-ip > 8 and count() by c-ip < 20
+falsepositives:
+    - API polling applications
+level: medium

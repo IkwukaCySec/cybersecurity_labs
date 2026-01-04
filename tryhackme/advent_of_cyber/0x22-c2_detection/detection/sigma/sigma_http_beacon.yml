@@ -1,0 +1,24 @@
+title: Suspicious HTTP Beaconing Behavior
+id: a1b2c3d4-e5f6-7890-g1h2-i3j4k5l6m7n8
+status: stable
+description: Detects regular HTTP POST beaconing to external hosts
+author: IkwukaCySec
+date: 2026-01-01
+references:
+    - AoC 2025 HopHelper Analysis
+logsource:
+    category: proxy
+    product: web_proxy
+detection:
+    selection:
+        c-method: POST
+        c-uri|contains: '/beacon'
+        OR cs-user-agent: 'HopHelper'
+    timeframe: 10m
+    condition: selection | count() by c-ip > 5
+falsepositives:
+    - Legitimate monitoring tools
+level: high
+tags:
+    - attack.command_and_control
+    - attack.t1071.001
