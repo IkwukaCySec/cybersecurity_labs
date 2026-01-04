@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  plc:
+    build: .
+    ports:
+      - "502:502"
+    container_name: toyfactory-plc
+    restart: unless-stopped
+
+  attacker:
+    image: python:3.11-slim
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: tail -f /dev/null
+    depends_on:
+      - plc
