@@ -1,0 +1,10 @@
+graph TD
+    A[Attacker] --> B[Modbus/TCP Port 502]
+    B --> C[Read Holding Registers]
+    C --> D[Identify Register 40005]
+    D --> E[Write Value 2 - Eggs]
+    E --> F[Drone Fleet Delivers Eggs]
+    F --> G[Execute restore_christmas.py]
+    G --> H[Write Value 1 - Presents]
+    H --> I[Christmas Saved]
+    style I fill:#00ff00,stroke:#0f0
