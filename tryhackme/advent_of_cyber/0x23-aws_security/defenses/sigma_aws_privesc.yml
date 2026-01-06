@@ -1,0 +1,18 @@
+title: AWS IAM Privilege Escalation via Role Assumption
+id: f1g2h3i4-j5k6-l7m8-n9o0-p1q2r3s4t5u6
+status: stable
+description: Detects suspicious AssumeRole calls leading to privilege escalation
+author: IkwukaCySec
+date: 2026-01-01
+logsource:
+    service: cloudtrail
+    product: aws
+detection:
+    selection:
+        eventName: AssumeRole
+        userIdentity.type: IAMUser
+        responseElements.assumedRoleUser.assumedRoleArn|contains: Administrator
+    condition: selection
+falsepositives:
+    - Legitimate admin role assumption
+level: high

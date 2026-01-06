@@ -1,0 +1,15 @@
+# CloudWatch Alarms for Security Events
+Resources:
+  S3PublicAccessAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: "S3-Public-Bucket-Detection"
+      MetricName: BucketPublicAccess
+      Namespace: AWS/S3
+      Statistic: Maximum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 0
+      ComparisonOperator: GreaterThanThreshold
+      AlarmActions:
+        - !Ref SNSTopic

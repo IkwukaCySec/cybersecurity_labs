@@ -1,0 +1,10 @@
+{
+  "Findings": [
+    {
+      "Name": "Unauthorized S3 Access",
+      "DetectorId": "default",
+      "Severity": 8,
+      "Type": "UnauthorizedAccess:S3/Bucket"
+    }
+  ]
+}
