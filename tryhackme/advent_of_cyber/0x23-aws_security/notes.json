@@ -1,0 +1,9 @@
+{
+  "lab_name": "AWS Security Assessment Toolkit",
+  "focus_areas": ["S3", "IAM", "EC2", "Lambda", "CloudTrail", "GuardDuty"],
+  "vulnerabilities": ["public_s3", "iam_overprivilege", "imds_v1", "lambda_unauth"],
+  "compliance": ["CIS AWS Benchmarks", "AWS Well-Architected", "MITRE ATT&CK Cloud"],
+  "local_emulator": "LocalStack",
+  "tools": ["boto3", "Terraform", "Sigma", "YARA"],
+  "tags": ["aws-security", "cloud-pentest", "iam", "s3", "devsecops"]
+}
