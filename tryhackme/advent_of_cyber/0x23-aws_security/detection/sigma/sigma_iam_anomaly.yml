@@ -1,0 +1,17 @@
+title: AWS IAM Anomalous Role Assumption
+id: 2b3c4d5e-6f7g-8h9i-0j1k-l2m3n4o5p6q7
+status: stable
+description: Detects role assumption from unusual sources or times
+author: IkwukaCySec
+date: 2026-01-01
+logsource:
+    service: cloudtrail
+    product: aws
+detection:
+    selection:
+        eventName: AssumeRole
+        userIdentity.type: IAMUser
+    condition: selection and not sourceIPAddress in known_internal_ranges
+falsepositives:
+    - Remote work access
+level: medium

@@ -1,0 +1,16 @@
+title: Suspicious EC2 Metadata Access
+id: 3c4d5e6f-7g8h-9i0j-1k2l-m3n4o5p6q7r8
+status: stable
+description: Detects access to EC2 instance metadata from unexpected sources
+author: IkwukaCySec
+date: 2026-01-01
+logsource:
+    category: web
+detection:
+    selection:
+        c-uri: '/latest/meta-data/iam/security-credentials/*'
+        cs-method: GET
+    condition: selection
+falsepositives:
+    - Legitimate health checks
+level: high

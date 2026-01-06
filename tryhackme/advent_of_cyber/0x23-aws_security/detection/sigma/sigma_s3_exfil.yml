@@ -1,0 +1,18 @@
+title: Suspicious S3 Data Exfiltration
+id: 1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6
+status: stable
+description: Detects unusual S3 GetObject operations from external IPs
+author: IkwukaCySec
+date: 2026-01-01
+logsource:
+    service: s3
+    product: aws
+detection:
+    selection:
+        eventName: GetObject
+        sourceIPAddress!~'^10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[0-1])\.'
+    timeframe: 5m
+    condition: selection | count() by sourceIPAddress > 10
+falsepositives:
+    - CDN or proxy access
+level: high
