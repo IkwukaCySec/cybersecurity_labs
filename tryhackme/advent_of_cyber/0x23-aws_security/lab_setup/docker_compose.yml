@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack-aws
+    ports:
+      - "4566:4566"
+      - "4572:4572"   # S3
+    environment:
+      - SERVICES=s3,iam,ec2,lambda,cloudtrail,guardduty
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+    volumes:
+      - "./init_aws_env.sh:/docker-entrypoint-initaws.d/init.sh"
