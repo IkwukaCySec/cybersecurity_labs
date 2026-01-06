@@ -1,0 +1,7 @@
+graph TD
+    A[Initial Access] --> B[S3 Public Bucket]
+    B --> C[Credential Leak]
+    C --> D[IAM Role Assumption]
+    D --> E[Admin Access]
+    E --> F[Full Compromise]
+    style F fill:#f96
