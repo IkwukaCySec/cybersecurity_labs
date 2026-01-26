@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Download latest ISO, install, and update
+
+sudo apt update && sudo apt full-upgrade
