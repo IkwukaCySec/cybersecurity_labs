@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Install common tools
+
+sudo apt install nmap wireshark metasploit-framework hydra burpsuite zaproxy openvas
