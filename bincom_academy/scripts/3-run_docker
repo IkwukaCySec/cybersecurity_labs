@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+Run Docker and connect to Cowrie
+
+docker run -p 2222:2222 cowrie/cowrie:latest

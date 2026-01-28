@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Use Docker for Cowrie Honeyport VM (Ubuntu)
+
+sudo apt install docker.io
