@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# After installing Docker, download the latest Cowrie version using Dockercommands
+
+sudo docker run -p 2222:2222 cowrie/cowrie:latest
