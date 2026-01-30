@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Connect to Cowrie through SSH.
+
+sudo ssh -p 2222 root@172.17.0.1
