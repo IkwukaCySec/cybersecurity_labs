@@ -1,0 +1,2 @@
+tcp port 2222 
+tcp port 2222 and host 172.17.0.1 	# For a more broad coverage
