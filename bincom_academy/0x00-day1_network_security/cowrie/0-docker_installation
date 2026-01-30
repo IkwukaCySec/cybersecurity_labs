@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Using Docker to install Cowrie
+
+# sudo apt install docker
