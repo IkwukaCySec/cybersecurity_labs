@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Fourth Nmap scanning command used.
+
+sudo nmap -sV -O 2222 172.17.0.1
