@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Enable ModSecurity on Apache:
+
+sudo apt install libapache2-mod-security2 -y
+sudo a2enmod security2
+sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
+sudo sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /etc/modsecurity/modsecurity.conf
+sudo systemctl restart apache2
