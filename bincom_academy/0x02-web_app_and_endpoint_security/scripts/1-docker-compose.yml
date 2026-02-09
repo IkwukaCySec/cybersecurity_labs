@@ -1,0 +1,9 @@
+version: '3'
+services:
+  dvwa:
+    image: vulnerables/web-dvwa
+    ports:
+      - "8080:80"
+    environment:
+      - PHP_UPLOAD_MAX_FILESIZE=10M
+    restart: alway
