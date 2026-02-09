@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Deploy DVWA + ModSecurity (with the Docker method)
+
+sudo apt install docker.io docker-compose -y
+sudo systemctl enable --now docker
