@@ -1,0 +1,4 @@
+#!/usr/bin/env
+# Start Docker
+
+docker-conpose up -d
