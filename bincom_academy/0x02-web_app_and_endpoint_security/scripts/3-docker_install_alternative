@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Alternative (if Docker is not wanted)
+# To be installed on Ubuntu VM
+
+sudo apt install apache2 mariadb-server php php-mysqli php-gd libapache2-mod-php -y
+sudo git clone https://github.com/digininja/DVWA.git /var/www/html/dvwa
+sudo chown -R www-data:www-data /var/www/html/dvwa
+# Configure config.inc.php + create DB as before
