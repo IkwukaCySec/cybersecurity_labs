@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Revert ModSecurity to DetectionOnly mode
+
+sudo nano /etc/modsecurity/modsecurity.conf
+
+# Change: 
+#	SecRuleEngine On
+#	
+#	to
+#
+#	SecRuleEngine DetectionOnly

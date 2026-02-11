@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Check the excact Apache2 error
+
+sudo systemctl status apache2.service
+sudo journalctl -xeu apache2.service -n 30
