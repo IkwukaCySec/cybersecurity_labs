@@ -1,0 +1,7 @@
+#!/usr/bin/env bash 
+# Disable and re-enable ModSecurity
+
+sudo a2dismod security2
+sudo systemctl restart apache2   # should work now
+sudo a2enmod security2
+sudo systemctl restart apache2   # test again
