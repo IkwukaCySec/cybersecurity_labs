@@ -1,0 +1,4 @@
+#1/usr/bin/env bash
+# Vulnerability: SQL Injection
+
+echo "1=1 -- -"
