@@ -1,0 +1,3 @@
+Access DVWA: 
+
+http://localhost:8080 (or Kali IP:8080) → Click "Create/Reset Database" → Login: admin / password → DVWA Security → Low (for initial attacks).
