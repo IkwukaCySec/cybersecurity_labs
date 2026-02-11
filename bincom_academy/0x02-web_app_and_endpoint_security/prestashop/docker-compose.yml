@@ -1,0 +1,31 @@
+version: '3'
+services:
+  prestashop:
+    image: prestashop/prestashop:latest
+    ports:
+      - "8081:80"
+    environment:
+      PS_DOMAIN: localhost:8081
+      PS_DB_HOST: db
+      PS_DB_USER: prestashop
+      PS_DB_PASSWORD: prestashop
+      PS_DB_NAME: prestashop
+      PS_INSTALL_AUTO: 1
+    volumes:
+      - prestashop_data:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: prestashop
+      MYSQL_USER: prestashop
+      MYSQL_PASSWORD: prestashop
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  prestashop_data:
+  db_data:
