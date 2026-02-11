@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Create custom rule file
+# sudo nano /etc/modsecurity/custom_rules.conf
+
+SecRuleEngine On
+
+# Block SQL Injection
+SecRule ARGS "@rx (?i)(\bunion\b|\bselect\b|\bor\b|\band\b|\bsleep\b|benchmark\b|--|#)" \
+  "id:1001,phase:2,log,deny,status:403,msg:'SQL Injection Detected'"
+
+# Block XSS
+SecRule ARGS "@rx (?i)(<script|</script|onerror|onload|alert\s*\(|document\.cookie|<img)" \
+  "id:1002,phase:2,log,deny,status:403,msg:'XSS Detected'"
