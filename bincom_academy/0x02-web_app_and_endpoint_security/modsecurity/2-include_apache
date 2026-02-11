@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Include in Apache
+
+sudo nano /etc/apache2/mods-enabled/security2.conf
+
+# Add `Include /etc/modsecurity/custom_rules.conf`
+
+# Restart:
+
+sudo systemctl restart apache2
+
+
