@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Clean all configs
+
+sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
+sudo sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /etc/modsecurity/modsecurity.conf
+sudo rm /etc/modsecurity/custom_rules.conf   # delete your custom file for now
+sudo systemctl restart apache2

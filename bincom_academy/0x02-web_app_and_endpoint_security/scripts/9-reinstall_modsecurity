@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Reinstall ModSecurity
+
+sudo apt purge libapache2-mod-security2 -y
+sudo apt autoremove -y
+sudo apt install libapache2-mod-security2 -y
+sudo a2enmod security2
+sudo systemctl restart apache2
