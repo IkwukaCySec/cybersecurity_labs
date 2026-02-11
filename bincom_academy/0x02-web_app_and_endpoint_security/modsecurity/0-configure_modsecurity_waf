@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Configure ModSecurity WAF
+# Install on Ubuntu
+
+sudo apt install apache2 libapache2-mod-security2 -y
+sudo a2enmod security2
+sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
+sudo sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /etc/modsecurity/modsecurity.conf
+sudo systemctl restart apache2
