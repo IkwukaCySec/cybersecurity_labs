@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Test Apache config
+
+sudo apache2ctl configtest
