@@ -1,13 +1,14 @@
-# Prestashop Attack Report
+# **PrestaShop Attack Simulation Report**
 
----
+**Methodology**: Used browser (and Burp Suite for payload crafting) to test common OWASP Top 10 vectors on input fields (search, contact form, login).
 
-## **PrestaShop Attack Simulation Report**
+**Exploited Vector**: Reflected no XSS in contact form.
 
-**Methodology:** Deployed PrestaShop via Docker. Used browser and Burp Suite to test common OWASP vectors (SQLi, XSS) on input fields (search, contact form).
+**Evidence**: Screenshot attached (alert does not popup on submit).  
+**Logs**: Docker logs show request processed, no server-side block detected.
 
-**Exploited Vector:** Reflected XSS in contact form.
-
-**Evidence:** Screenshot attached (alert popup). Logs: Apache error "XSS attempt detected".
-
-**Mitigation:** Update PrestaShop; enable built-in filters; add ModSecurity rules for XSS; validate/escape all user inputs.
+**Mitigation**:
+- Input sanitization already present in PrestaShop core.
+- Enable CSP headers in .htaccess or module.
+- Add ModSecurity WAF rules (from DVWA part) for extra protection.
+- Update to latest version; disable unnecessary input fields.
