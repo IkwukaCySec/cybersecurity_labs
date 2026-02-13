@@ -1,0 +1,9 @@
+# sudo nano /etc/filebeat/filebeat.yml
+
+filebeat.inputs:
+- type: log
+  paths:
+    - /var/log/auth.log
+
+output.logstash:
+  hosts: 127.0.0.1:5044 # My Kali IP
