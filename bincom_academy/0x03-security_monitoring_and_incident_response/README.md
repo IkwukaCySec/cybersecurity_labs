@@ -27,3 +27,22 @@ Security Onion ISO (~6 GB) + VM requirements (8+ GB RAM, 100 GB disk) exceeded a
 Host Machine
 ├─ Kali Linux (ELK + Attacker) → 192.168.56.101
 └─ Metasploitable2 (Target)   → 192.168.56.102
+
+### Lessons Learned
+
+- Resource constraints force creative, lightweight solutions (Docker ELK vs full SO).
+- Log correlation via tags and Kibana filters is powerful for detecting brute-force patterns.
+- AI introduces novel risks (prompt injection, poisoning) requiring new monitoring approaches.
+
+### References
+
+- Docker ELK: https://github.com/deviantony/docker-elk
+- Filebeat: https://www.elastic.co/guide/en/beats/filebeat/current/index.html
+- MITRE ATT&CK: https://attack.mitre.org
+- NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework
+
+**Last Updated**: February 14, 2026
+**Author**: Ikwuka Okoye / IkwukaCySec
+**For**: Bincom Academy – bincomdevcenter@bincom.net
+
+MIT License – educational use only.
