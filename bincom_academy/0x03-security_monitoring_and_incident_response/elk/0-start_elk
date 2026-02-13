@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Create and start the Elk image 
+
+sudo docker-compose up -d
