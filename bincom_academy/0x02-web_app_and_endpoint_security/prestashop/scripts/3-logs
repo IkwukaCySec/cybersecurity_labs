@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# View PrestaShop logs
+
+sudo docker logs prestashop-prestashop | tail -50   # web server logs
+sudo docker logs prestashop-db | tail -20           # DB errors if any
