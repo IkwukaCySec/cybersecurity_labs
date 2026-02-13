@@ -1,18 +1,19 @@
 services:
   prestashop:
     image: prestashop/prestashop:latest
+    container_name: prestashop-prestashop
     ports:
       - "8081:80"
     environment:
-      PS_DOMAIN: localhost:8081
-      PS_DB_HOST: db                  # ← this is the critical line (service name of db)
-      PS_DB_USER: prestashop
-      PS_DB_PASSWORD: prestashop
-      PS_DB_NAME: prestashop
-      PS_INSTALL_AUTO: 1
-      PS_LANGUAGE: en
-      PS_COUNTRY: US
-      PS_TIMEZONE: America/New_York
+      - PS_DOMAIN=localhost:8081
+      - PS_DB_HOST=db
+      - PS_DB_USER=prestashop
+      - PS_DB_PASSWORD=prestashop
+      - PS_DB_NAME=prestashop
+      # - PS_INSTALL_AUTO=1
+      - PS_LANGUAGE=en
+      - PS_COUNTRY=US
+      - PS_TIMEZONE=America/New_York
     volumes:
       - prestashop_data:/var/www/html
     depends_on:
@@ -21,11 +22,12 @@ services:
 
   db:
     image: mariadb:latest
+    container_name: prestashop-db
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: prestashop
-      MYSQL_USER: prestashop
-      MYSQL_PASSWORD: prestashop
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=prestashop
+      - MYSQL_USER=prestashop
+      - MYSQL_PASSWORD=prestashop
     volumes:
       - db_data:/var/lib/mysql
     restart: always
