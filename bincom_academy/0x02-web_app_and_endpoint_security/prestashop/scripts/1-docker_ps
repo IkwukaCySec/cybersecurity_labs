@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Show Docker processes
+
+sudo docker-compose ps
