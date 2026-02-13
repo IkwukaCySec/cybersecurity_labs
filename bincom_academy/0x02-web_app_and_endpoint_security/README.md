@@ -19,7 +19,12 @@ Documentation for Day 3: OWASP Top 10 attacks on DVWA, ModSecurity WAF blocking,
 
 ## Lessons Learned
 
-WAFs like ModSecurity are effective for blocking common attacks with simple rules. PrestaShop hardening requires checklist-driven approach to cover modules, permissions, and endpoints.
+WAFs like ModSecurity are effectiive for blocking common attacks with simple rules. PrestaShop hardening requires checklist-driven approach to cover modules, permissions, and endpoints.
+
+## PrestaShop Deployment & Assessment
+- Docker Compose used for clean deployment
+- Manual install completed at /install
+- Checklist completed and attack simulated (XSS in contact form)
 
 **References:** OWASP Top 10, PrestaShop docs, ModSecurity guide.
 
