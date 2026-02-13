@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Start Filebeat
+
+sudo filebeat setup
+sudo systemctl enable --now filebeat
