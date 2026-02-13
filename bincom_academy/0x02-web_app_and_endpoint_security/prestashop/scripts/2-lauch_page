@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Remove the installation page instantly
+# and launch the main page through refresh
+
+sudo docker exec -it prestashop-prestashop rm -rf /var/www/html/install
