@@ -1,4 +1,3 @@
-# version: '3'
 services:
   prestashop:
     image: prestashop/prestashop:latest
@@ -6,15 +5,19 @@ services:
       - "8081:80"
     environment:
       PS_DOMAIN: localhost:8081
-      PS_DB_HOST: db
+      PS_DB_HOST: db                  # ← this is the critical line (service name of db)
       PS_DB_USER: prestashop
       PS_DB_PASSWORD: prestashop
       PS_DB_NAME: prestashop
       PS_INSTALL_AUTO: 1
+      PS_LANGUAGE: en
+      PS_COUNTRY: US
+      PS_TIMEZONE: America/New_York
     volumes:
       - prestashop_data:/var/www/html
     depends_on:
       - db
+    restart: always
 
   db:
     image: mariadb:latest
@@ -25,6 +28,7 @@ services:
       MYSQL_PASSWORD: prestashop
     volumes:
       - db_data:/var/lib/mysql
+    restart: always
 
 volumes:
   prestashop_data:
