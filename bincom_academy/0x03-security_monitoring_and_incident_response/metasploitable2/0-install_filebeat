@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# On Metasploitable2 (target)
+# Install Filebeat
+
+sudo apt update && sudo apt install filebeat -y
