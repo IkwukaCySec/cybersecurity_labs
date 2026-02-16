@@ -1,0 +1,8 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/auth.log  # SSH logs on Ubuntu target
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
