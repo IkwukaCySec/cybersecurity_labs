@@ -1,22 +1,51 @@
+version: '3.8'
 services:
   elasticsearch:
-    image: bitnami/elasticsearch:8
-    ports:
-      - "9200:9200"
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0 # Latest 2026 version
     environment:
       - discovery.type=single-node
-      - xpack.security.enabled=false
+      - xpack.security.enabled=false  # For lab simplicity; enable in prod
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"   # Adjust if low RAM
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - elk-net
 
   kibana:
-    image: bitnami/kibana:8
+    image: docker.elastic.co/kibana/kibana:8.15.0
     ports:
       - "5601:5601"
     environment:
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk-net
 
   logstash:
-    image: bitnami/logstash:8
-    ports:
-      - "5044:5044"
+    image: docker.elastic.co/logstash/logstash:8.15.0
     volumes:
-      - ./logstash.conf:/opt/bitnami/logstash/pipeline/logstash.conf
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk-net
+
+  filebeat:  # Lightweight shipper for logs
+    image: docker.elastic.co/beats/filebeat:8.15.0
+    user: root
+    volumes:
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/log:/var/log:ro  # If using host logs; adjust for containers
+    networks:
+      - elk-net
+    depends_on:
+      - elasticsearch
+
+volumes:
+  esdata:
+
+networks:
+  elk-net:
