@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Create and start the Elk image 
+# Create and start the Elk stack image
+# ELK Stack contains Elasticsearch + Logstash + Kibana.
 
 sudo docker-compose up -d
