@@ -1,0 +1,49 @@
+# version: '3.7'
+
+services:
+  wazuh.manager:
+    image: wazuh/wazuh-manager:latest
+    hostname: wazuh-manager
+    ports:
+      - "1514:1514/udp"   # Agent communication
+      - "1515:1515"       # Agent enrollment
+      - "55000:55000"     # API
+    environment:
+      - INDEXER_URL=https://wazuh.indexer:9200
+      - INDEXER_USERNAME=admin
+      - INDEXER_PASSWORD=SecretPassword  # Change this!
+    volumes:
+      - wazuh_etc:/var/ossec/etc
+      - wazuh_logs:/var/ossec/logs
+      - wazuh_queue:/var/ossec/queue
+
+  wazuh.indexer:
+    image: wazuh/wazuh-indexer:latest
+    hostname: wazuh-indexer
+    ports:
+      - "9200:9200"   # Optional external access
+    environment:
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock: -1
+      nofile: 65536
+    volumes:
+      - wazuh_indexer_data:/var/lib/wazuh-indexer
+
+  wazuh.dashboard:
+    image: wazuh/wazuh-dashboard:latest
+    hostname: wazuh-dashboard
+    depends_on:
+      - wazuh.indexer
+      - wazuh.manager
+    ports:
+      - "5601:5601"   # Dashboard accessed here
+    environment:
+      - INDEXER_URL=https://wazuh.indexer:9200
+      - WAZUH_API_URL=https://wazuh.manager:55000
+
+volumes:
+  wazuh_etc:
+  wazuh_logs:
+  wazuh_queue:
+  wazuh_indexer_data:
