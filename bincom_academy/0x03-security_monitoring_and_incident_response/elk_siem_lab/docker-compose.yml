@@ -48,7 +48,7 @@ services:
     image: ubuntu:24.04
     command: bash -c "apt update && apt install -y openssh-server && mkdir /var/run/sshd && echo 'root:password' | chpasswd && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && /usr/sbin/sshd -D"
     ports:
-      - "2222:22"  # Map to avoid conflict
+      - "2223:22"  # Map to avoid conflict
     volumes:
       - ./auth-logs:/var/log  # Mount to share logs with filebeat if needed
     networks:
