@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Uninstall the pre-installed yum version
+
+sudo yum remove awscli
