@@ -6,3 +6,7 @@ filebeat.inputs:
 
 output.elasticsearch:
   hosts: ["elasticsearch:9200"]
+
+volumes:
+  - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+  - ./target-logs:/var/log:ro  # Now reads the shared logs
