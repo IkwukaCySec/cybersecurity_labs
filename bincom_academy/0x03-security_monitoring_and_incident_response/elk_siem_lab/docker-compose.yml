@@ -57,5 +57,8 @@ services:
 volumes:
   esdata:
 
+volumes:
+  - ./target-logs:/var/log   # Creates ./target-logs folder on host with container's /var/log
+
 networks:
   elk-net:
