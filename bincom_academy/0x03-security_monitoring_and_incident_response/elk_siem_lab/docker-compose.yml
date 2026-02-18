@@ -50,15 +50,12 @@ services:
     ports:
       - "2223:22"  # Map to avoid conflict
     volumes:
-      - ./auth-logs:/var/log  # Mount to share logs with filebeat if needed
+      - ./target-logs:/var/log   # Creates ./target-logs folder on host with container's /var/log
     networks:
       - elk-net
 
 volumes:
   esdata:
-
-volumes:
-  - ./target-logs:/var/log   # Creates ./target-logs folder on host with container's /var/log
 
 networks:
   elk-net:
