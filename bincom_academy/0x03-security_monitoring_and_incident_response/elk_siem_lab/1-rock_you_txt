@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Copy the first 10,000 words in the rockyou.txt file, and
+# save it in a file named 'small_rockyou.txt'.
+
+head -n 10000 /usr/share/wordlists/rockyou.txt > small_rockyou.txt
