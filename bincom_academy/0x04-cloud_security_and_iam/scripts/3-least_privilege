@@ -1,0 +1,14 @@
+# Fix least privilege
+
+aws iam detach-user-policy \
+  --user-name vulnerable-user \
+  --policy-arn arn:aws:iam::aws:policy/AdministratorAccess \
+  --profile default
+
+# If created custom:
+aws iam detach-user-policy \
+  --user-name vulnerable-user \
+  --policy-arn arn:aws:iam::YOUR_ACCOUNT_ID:policy/EvilAdminPolicy
+
+aws iam delete-policy \
+  --policy-arn arn:aws:iam::YOUR_ACCOUNT_ID:policy/EvilAdminPolicy
