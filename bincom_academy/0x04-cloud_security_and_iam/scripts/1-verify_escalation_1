@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Verify Escalation
+
+aws sts get-caller-identity --profile vulnerable
