@@ -1,0 +1,5 @@
+aws iam delete-access-key --access-key-id <old-key> --user-name vulnerable-user
+
+# Delete user if desired
+aws iam delete-user-policy --user-name vulnerable-user --policy-name LeastPrivS3Read
+aws iam delete-user --user-name vulnerable-user
