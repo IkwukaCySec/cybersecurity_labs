@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Show user ARN
+
+aws iam list-users --profile vulnerable
