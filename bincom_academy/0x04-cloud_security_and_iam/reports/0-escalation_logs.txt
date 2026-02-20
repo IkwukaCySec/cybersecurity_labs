@@ -1,0 +1,15 @@
+#
+# COMMAND
+#
+ aws sts get-caller-identity --profile vulnerable
+
+#
+# OUTPUT
+#
+
+{
+    "UserId": "AIDA6ISVD3URKCYZNBTII",
+    "Account": "980504796450",
+    "Arn": "arn:aws:iam::980504796450:user/vulnerable-user"
+}
+
