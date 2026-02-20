@@ -17,12 +17,7 @@ Attack Path:
 MITRE ATT&CK Cloud: T1098.001 (Account Manipulation: Additional Cloud Credentials)
 
 ## Screenshots To Be Taken
-- 1-misconfig_user_creation.png
-- 2-attached_policies_vuln.png
-- 3-escalation_cli_attach.png
-- 4-escalation_success_get_caller.png
-- 5-fix_detach_before.png
-- 6-fix_least_priv_after.png
+Attached in the ./screenshots directory
 
 ## CLI Logs
 See escalation_logs.txt & fix_logs.txt
@@ -35,3 +30,31 @@ See escalation_logs.txt & fix_logs.txt
 
 ## Cleanup
 All resources deleted post-demo.
+
+## Fix Phase – Least Privilege Applied
+Detached AdministratorAccess policy.
+Attached inline policy with minimal S3 read permissions (or explicit Deny-all for demo).
+
+Commands used:
+```
+aws iam put-user-policy \
+  --user-name vulnerable-user \
+  --policy-name LeastPrivS3ReadOnly \
+  --policy-document '{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:ListBucket",
+          "s3:GetObject"
+        ],
+        "Resource": [
+          "arn:aws:s3:::example-bucket",
+          "arn:aws:s3:::example-bucket/*"
+        ]
+      }
+    ]
+  }' \
+  --profile admin
+```
