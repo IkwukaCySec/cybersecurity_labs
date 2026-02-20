@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Detach the dangerous AdministratorAcces policy
+
+aws iam detach-user-policy \
+  --user-name vulnerable-user \
+  --policy-arn arn:aws:iam::aws:policy/AdministratorAccess \
+  --profile admin
