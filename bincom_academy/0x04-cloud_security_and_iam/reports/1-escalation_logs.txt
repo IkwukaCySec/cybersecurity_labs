@@ -1,0 +1,21 @@
+#
+# COMMAND
+#
+
+aws iam list-users --profile vulnerable
+
+#
+# OUTPUT
+#
+
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "vulnerable-user",
+            "UserId": "AIDA6ISVD3URKCYZNBTII",
+            "Arn": "arn:aws:iam::980504796450:user/vulnerable-user",
+            "CreateDate": "2026-02-20T01:13:12+00:00"
+        }
+    ]
+}
