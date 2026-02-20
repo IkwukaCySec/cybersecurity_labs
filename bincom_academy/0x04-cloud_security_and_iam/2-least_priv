@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+aws iam put-user-policy \
+  --user-name vulnerable-user \
+  --policy-name LeastPrivS3Read \
+  --policy-document file://least-priv.json
