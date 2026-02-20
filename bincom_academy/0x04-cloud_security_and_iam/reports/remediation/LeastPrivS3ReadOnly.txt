@@ -1,0 +1,16 @@
+#
+# COMMAND
+#
+
+aws iam list-user-policies --user-name vulnerable-user --profile admin
+
+#
+# OUTPUT
+#
+
+{
+    "PolicyNames": [
+        "LeastPrivS3ReadOnly"
+    ]
+}
+
