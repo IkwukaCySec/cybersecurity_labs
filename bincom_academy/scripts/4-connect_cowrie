@@ -1,4 +1,0 @@
-#1/usr/bin/env bash
-# Connect to Cowrie
-
-ssh -p 2222 root@<cowrie_ip>

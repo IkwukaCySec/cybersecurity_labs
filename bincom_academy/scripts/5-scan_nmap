@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Nmap scan from Kali
-
-nmap -sV -O <cowrie-ip>
