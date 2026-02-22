@@ -1,8 +1,119 @@
-# Nmap 7.98 scan initiated Sat Feb 21 23:38:00 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -p- -oN nmap_portscan.txt 10.80.174.50
-Nmap scan report for 10.80.174.50
-Host is up (0.0036s latency).
-All 65535 scanned ports on 10.80.174.50 are in ignored states.
-Not shown: 65535 closed tcp ports (reset)
+# Nmap 7.80 scan initiated Mon Feb 23 13:19:32 2026 as: nmap -sS -vv -sC -sS -sV -oN nmapout.txt 10.82.143.121
+mass_dns: warning: Unable to open /etc/resolv.conf. Try using --system-dns or specify valid servers with --dns-servers
+mass_dns: warning: Unable to determine any DNS servers. Reverse DNS is disabled. Try using --system-dns or specify valid servers with --dns-servers
+Nmap scan report for 10.82.143.121
+Host is up, received localhost-response (0.000014s latency).
+Scanned at 2026-02-23 13:19:32 GMT for 148s
+Not shown: 989 closed ports
+Reason: 989 resets
+PORT     STATE    SERVICE       REASON         VERSION
+22/tcp   open     ssh           syn-ack ttl 64 OpenSSH 8.2p1 Ubuntu 4ubuntu0.11 (Ubuntu Linux; protocol 2.0)
+53/tcp   open     domain        syn-ack ttl 64 dnsmasq 2.90
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.90
+80/tcp   open     http          syn-ack ttl 64 WebSockify Python/3.8.10
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 405 Method Not Allowed
+|     Server: WebSockify Python/3.8.10
+|     Date: Mon, 23 Feb 2026 13:19:37 GMT
+|     Connection: close
+|     Content-Type: text/html;charset=utf-8
+|     Content-Length: 472
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 405</p>
+|     <p>Message: Method Not Allowed.</p>
+|     <p>Error code explanation: 405 - Specified method is invalid for this resource.</p>
+|     </body>
+|     </html>
+|   HTTPOptions: 
+|     HTTP/1.1 501 Unsupported method ('OPTIONS')
+|     Server: WebSockify Python/3.8.10
+|     Date: Mon, 23 Feb 2026 13:19:37 GMT
+|     Connection: close
+|     Content-Type: text/html;charset=utf-8
+|     Content-Length: 500
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 501</p>
+|     <p>Message: Unsupported method ('OPTIONS').</p>
+|     <p>Error code explanation: HTTPStatus.NOT_IMPLEMENTED - Server does not support this operation.</p>
+|     </body>
+|_    </html>
+|_http-server-header: WebSockify Python/3.8.10
+|_http-title: Error response
+81/tcp   open     http          syn-ack ttl 64 Apache httpd 2.4.41 ((Ubuntu))
+| http-methods: 
+|_  Supported Methods: GET POST OPTIONS HEAD
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+111/tcp  open     rpcbind       syn-ack ttl 64 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|_  100000  3,4          111/udp6  rpcbind
+389/tcp  open     ldap          syn-ack ttl 64 OpenLDAP 2.2.X - 2.3.X
+3389/tcp open     ms-wbt-server syn-ack ttl 64 xrdp
+5901/tcp open     vnc           syn-ack ttl 64 VNC (protocol 3.8)
+|_ssl-cert: ERROR: Script execution failed (use -d to debug)
+|_ssl-date: ERROR: Script execution failed (use -d to debug)
+|_sslv2: ERROR: Script execution failed (use -d to debug)
+|_vnc-info: ERROR: Script execution failed (use -d to debug)
+6001/tcp open     X11           syn-ack ttl 64 (access denied)
+7777/tcp filtered cbt           no-response
+7778/tcp filtered interwise     no-response
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.80%I=7%D=2/23%Time=699C53E9%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,291,"HTTP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nServer:\x20
+SF:WebSockify\x20Python/3\.8\.10\r\nDate:\x20Mon,\x2023\x20Feb\x202026\x20
+SF:13:19:37\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20text/html;c
+SF:harset=utf-8\r\nContent-Length:\x20472\r\n\r\n<!DOCTYPE\x20HTML\x20PUBL
+SF:IC\x20\"-//W3C//DTD\x20HTML\x204\.01//EN\"\n\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\"http://www\.w3\.org/TR/html4/strict\.dtd\">\n<html>\n\x20\x20\x2
+SF:0\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equiv=\"Cont
+SF:ent-Type\"\x20content=\"text/html;charset=utf-8\">\n\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20<title>Error\x20response</title>\n\x20\x20\x20\x20</head>\
+SF:n\x20\x20\x20\x20<body>\n\x20\x20\x20\x20\x20\x20\x20\x20<h1>Error\x20r
+SF:esponse</h1>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Error\x20code:\x20405<
+SF:/p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Message:\x20Method\x20Not\x20Al
+SF:lowed\.</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Error\x20code\x20explan
+SF:ation:\x20405\x20-\x20Specified\x20method\x20is\x20invalid\x20for\x20th
+SF:is\x20resource\.</p>\n\x20\x20\x20\x20</body>\n</html>\n")%r(HTTPOption
+SF:s,2B9,"HTTP/1\.1\x20501\x20Unsupported\x20method\x20\('OPTIONS'\)\r\nSe
+SF:rver:\x20WebSockify\x20Python/3\.8\.10\r\nDate:\x20Mon,\x2023\x20Feb\x2
+SF:02026\x2013:19:37\x20GMT\r\nConnection:\x20close\r\nContent-Type:\x20te
+SF:xt/html;charset=utf-8\r\nContent-Length:\x20500\r\n\r\n<!DOCTYPE\x20HTM
+SF:L\x20PUBLIC\x20\"-//W3C//DTD\x20HTML\x204\.01//EN\"\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\"http://www\.w3\.org/TR/html4/strict\.dtd\">\n<html>\n\x
+SF:20\x20\x20\x20<head>\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http-equ
+SF:iv=\"Content-Type\"\x20content=\"text/html;charset=utf-8\">\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20<title>Error\x20response</title>\n\x20\x20\x20\x2
+SF:0</head>\n\x20\x20\x20\x20<body>\n\x20\x20\x20\x20\x20\x20\x20\x20<h1>E
+SF:rror\x20response</h1>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Error\x20code
+SF::\x20501</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>Message:\x20Unsupporte
+SF:d\x20method\x20\('OPTIONS'\)\.</p>\n\x20\x20\x20\x20\x20\x20\x20\x20<p>
+SF:Error\x20code\x20explanation:\x20HTTPStatus\.NOT_IMPLEMENTED\x20-\x20Se
+SF:rver\x20does\x20not\x20support\x20this\x20operation\.</p>\n\x20\x20\x20
+SF:\x20</body>\n</html>\n");
+Service Info: OSs: Linux, Unix; CPE: cpe:/o:linux:linux_kernel
 
+Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sat Feb 21 23:38:30 2026 -- 1 IP address (1 host up) scanned in 29.69 seconds
+# Nmap done at Mon Feb 23 13:22:00 2026 -- 1 IP address (1 host up) scanned in 148.59 seconds

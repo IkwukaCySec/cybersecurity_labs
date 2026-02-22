@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Perform full port scan with version detection & scripts
 
-sudo nmap -sS -vv -sC -sS -sV -oN nmapout.txt 10.82.143.121
+sudo nmap -sS -vv -sC -sS -sV -oN nmap_portscan.txt 10.82.143.121
 
 
