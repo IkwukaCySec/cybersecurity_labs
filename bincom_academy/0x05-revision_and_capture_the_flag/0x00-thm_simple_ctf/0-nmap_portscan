@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Perform full port scan with version detection & scripts
+
+nmap -sC -sV -p- -oN nmap_portscan.txt 10.80.174.50
+
