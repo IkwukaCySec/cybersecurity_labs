@@ -41,3 +41,37 @@ nmap -sC -sV -p- -oN nmap_portscan.txt 10.10.x.x
 # 21/tcp  open  ftp     vsftpd 3.0.3 (anonymous allowed)
 # 80/tcp  open  http    Apache httpd 2.4.18 ((Ubuntu))
 # 2222/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8
+```
+
+### Web Enumeration & Exploitation
+
+- Visited http://<IP> → found CMS (likely old/custom)
+- Checked /robots.txt → disallowed /simple
+- Browsed /simple → vulnerable login page (SQL Injection possible)
+- Used manual SQLi or exploit script → gained access
+- Found hidden file with hash → cracked with john/rockyou.txt
+
+### Initial Access
+
+- SSH as low-priv user: ssh sunbath@<IP> -p 2222
+- Password cracked from earlier hash
+
+### Privilege Escalation
+
+- sudo -l → vim allowed as root without password
+- GTFOBins technique:Bashsudo vim -c ':!/bin/sh'
+- Spawned root shell → read /root/root.txt
+
+### Tools Used
+
+- Nmap, Gobuster/Dirb (if needed), curl, john, hashcat
+- Manual browser testing + exploit-db lookup
+
+### 📝 Lessons Learned & Key Takeaways
+
+- Always run full Nmap scans — high ports like 2222 are easy to miss.
+- Check /robots.txt and hidden directories early.
+- Old software → CVE + exploit-db is gold.
+- Crack hashes quickly with rockyou.txt.
+- Misconfigured sudo rights (vim) are extremely dangerous (GTFOBins reference).
+- Reinforces full pentest chain: recon → enum → exploit → foothold → priv esc.
