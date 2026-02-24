@@ -1,0 +1,53 @@
+# version: "3.8"
+
+services:
+
+  dvwa:
+    image: vulnerables/web-dvwa:latest
+    container_name: dvwa
+    restart: unless-stopped
+    ports:
+      - "4280:80"           # avoid conflict with host 80
+    environment:
+      - PHP_UPLOAD_MAX_FILESIZE=300M
+      - PHP_POST_MAX_SIZE=300M
+    networks:
+      - lab-net
+
+  waf:
+    image: owasp/modsecurity-crs:nginx-alpine   # official CRS + ModSecurity
+    container_name: modsec-waf
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      - PROXY=1
+      - BACKEND=http://dvwa:80
+      - PARANOIA=1                # 1 = low, 2 = medium (start low)
+    volumes:
+      - ./waf-logs:/var/log/modsecurity
+    depends_on:
+      - dvwa
+    networks:
+      - lab-net
+
+  honeypot:
+    image: cowrie/cowrie:latest
+    container_name: cowrie-honeypot
+    restart: unless-stopped
+    ports:
+      - "2222:2222"             # SSH honeypot on host port 2222
+    volumes:
+      - ./cowrie-data:/cowrie/var/lib/cowrie
+      - ./cowrie-etc:/etc/cowrie
+    networks:
+      - lab-net
+
+  # Optional lightweight monitoring (if Security Onion too heavy)
+  # filebeat:
+  #   image: docker.elastic.co/beats/filebeat:8.15.0
+  #   ...
+
+networks:
+  lab-net:
+    driver: bridge
