@@ -1,0 +1,20 @@
+Architecture Diagram:
+
+┌─────────────────────┐          ┌─────────────────────┐
+│     Attacker        │          │     Monitoring      │
+│   (your Kali host)  │◄────────►│   Security Onion    │
+│   • Nmap            │  bridge  │   (or lightweight   │
+│   • Metasploit      │ network  │     ELK + Filebeat) │
+└──────────┬──────────┘          └─────────────────────┘
+           │
+           ▼
+┌─────────────────────┐   ┌─────────────────────┐   ┌─────────────────────┐
+│   DVWA (vulnerable) │   │   ModSecurity WAF   │   │     Cowrie Honeypot │
+│   http://dvwa:80    │◄──┤   (nginx + CRS)     │◄──┤   ssh://honeypot:22 │
+└─────────────────────┘   └─────────────────────┘   └─────────────────────┘
+           ▲
+           │
+     ┌─────┴─────┐
+     │  Internal │
+     │   bridge  │
+     └───────────┘
