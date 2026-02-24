@@ -1,0 +1,13 @@
+Task 1 Q1: can you capture the flag?
+Task 1 Q2: lets try some binary out!
+Task 1 Q3: base32 is super common in CTFs
+Task 1 Q4: Each Base64 digit represents exactly 6 bits of data.
+Task 1 Q5: hexadecimal or base16?
+Task 1 Q6: Rotate me 13 places!
+Task 1 Q7: ROT47 is also common in CTFs
+Task 1 Q8: I followed the dog
+Task 1 Q9: its a reverse shift!
+Task 1 Q10: who needs to see anyway?
+Task 2 (Spectrogram): [paste what you saw, e.g. the flag is spectrogram]
+Task 3 Q1: [hidden message from steghide]
+Task 3 Final/Archive pass example: 1 kn0w 1 5h0uldn'7!
