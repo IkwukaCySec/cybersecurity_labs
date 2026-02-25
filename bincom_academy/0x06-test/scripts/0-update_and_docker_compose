@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Update Kali and Install Docker + docker-compose
+
+sudo apt update && sudo apt install -y docker.io docker-compose-v2 git
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER   # log out & back in
