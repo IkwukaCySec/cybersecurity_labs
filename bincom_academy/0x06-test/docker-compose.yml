@@ -19,7 +19,7 @@ services:
     container_name: modsec-waf
     restart: unless-stopped
     ports:
-      - "8080:80"
+      - "8888:80"           # ← change 8080 → 8888 (or 8081, 9000, 7080 — any free port)
     environment:
       - PROXY=1
       - BACKEND=http://dvwa:80
