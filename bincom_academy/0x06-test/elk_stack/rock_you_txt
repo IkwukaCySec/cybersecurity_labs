@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script copies the first 10,000 words in the rockyou.txt file, and
-# saves it in a file named 'small_rockyou.txt'.
+# This script copies the first 20,000 words in the rockyou.txt file, and
+# saves it in a file named 'mini_rockyou.txt'.
 
-head -n 10000 /usr/share/wordlists/rockyou.txt > small_rockyou.txt
+head -n 20000 /usr/share/wordlists/rockyou.txt > mini_rockyou.txt
