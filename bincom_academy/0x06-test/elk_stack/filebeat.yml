@@ -1,0 +1,12 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/auth.log  # SSH logs on Ubuntu target
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
+
+volumes:
+  - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+  - ./target-logs:/var/log:ro  # Now reads the shared logs
