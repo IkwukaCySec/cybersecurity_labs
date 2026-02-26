@@ -1,12 +1,30 @@
-filebeat.inputs:
-- type: log
-  enabled: true
-  paths:
-    - /var/log/auth.log  # SSH logs on Ubuntu target
+filebeat.modules:
+  - module: system
+    syslog:
+      enabled: true
+    auth:
+      enabled: true
+      var.paths: ["/var/log/auth.log", "/var/log/auth.log.*"]
+      var.convert_timezone: true
 
-output.elasticsearch:
-  hosts: ["elasticsearch:9200"]
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded
+  - add_locale: ~
+  - add_fields:
+      when.contains.message: "Failed password"
+      target: ''
+      fields:
+        alert_type: brute_force_attempt
+        severity: high
+  - add_fields:
+      when.contains.message: "Accepted password"
+      target: ''
+      fields:
+        alert_type: successful_login
+        severity: info
 
-volumes:
-  - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-  - ./target-logs:/var/log:ro  # Now reads the shared logs
+output.logstash:
+  hosts: ["logstash:5044"]
+
+logging.level: info
