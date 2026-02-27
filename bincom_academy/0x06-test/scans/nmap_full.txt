@@ -1,0 +1,120 @@
+#
+# COMMAND
+#
+
+nmap -sV -sC -p- -oN scans/nmap_full.txt localhost 8888, 4280, 2222
+
+
+#
+# OUTPUT
+#
+
+# Nmap 7.98 scan initiated Thu Feb 26 22:39:02 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -p- -oN scans/nmap-full.txt localhost 8888, 4280, 2222
+Failed to resolve "8888,".
+Failed to resolve "4280,".
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000026s latency).
+Other addresses for localhost (not scanned): ::1
+Not shown: 65528 closed tcp ports (reset)
+PORT      STATE SERVICE    VERSION
+80/tcp    open  http       Apache httpd 2.4.66 ((Debian))
+|_http-server-header: Apache/2.4.66 (Debian)
+|_http-title: 403 Forbidden
+2222/tcp  open  ssh        OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 ab:69:99:44:20:6c:34:73:7b:cf:d5:7a:67:79:66:fd (RSA)
+|   256 58:41:bf:0d:12:f7:c3:fe:19:ae:d0:21:37:26:81:77 (ECDSA)
+|_  256 74:08:e5:a8:77:fc:ce:5c:8b:b2:88:f7:ba:e0:07:ab (ED25519)
+4280/tcp  open  http       Apache httpd 2.4.25 ((Debian))
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: Apache/2.4.25 (Debian)
+| http-title: Login :: Damn Vulnerable Web Application (DVWA) v1.10 *Develop...
+|_Requested resource was login.php
+8080/tcp  open  http       Apache httpd 2.4.25 ((Debian))
+|_http-server-header: Apache/2.4.25 (Debian)
+|_http-open-proxy: Proxy might be redirecting requests
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-robots.txt: 1 disallowed entry 
+|_/
+| http-title: Login :: Damn Vulnerable Web Application (DVWA) v1.10 *Develop...
+|_Requested resource was login.php
+8081/tcp  open  http       Apache httpd 2.4.65 ((Debian))
+|_http-server-header: Apache/2.4.65 (Debian)
+|_http-title: Bincom Lab Store
+| http-robots.txt: 116 disallowed entries (15 shown)
+| /*?order= /*?tag= /*?id_currency= /*?search_query= 
+| /*?back= /*?n= /*?q= /*&order= /*&tag= /*&id_currency= 
+|_/*&search_query= /*&back= /*&n= /*&q= /*controller=addresses
+8888/tcp  open  tcpwrapped
+46523/tcp open  http       Golang net/http server
+|_http-title: Site doesn't have a title (text/plain; charset=utf-8).
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Date: Fri, 27 Feb 2026 03:39:34 GMT
+|     Content-Length: 19
+|     Content-Type: text/plain; charset=utf-8
+|     404: Page Not Found
+|   GenericLines, Help, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, Socks5: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 404 Not Found
+|     Date: Fri, 27 Feb 2026 03:39:19 GMT
+|     Content-Length: 19
+|     Content-Type: text/plain; charset=utf-8
+|     404: Page Not Found
+|   OfficeScan: 
+|     HTTP/1.1 400 Bad Request: missing required Host header
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|_    Request: missing required Host header
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port46523-TCP:V=7.98%I=7%D=2/26%Time=69A111E7%P=x86_64-pc-linux-gnu%r(G
+SF:enericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20
+SF:text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\
+SF:x20Request")%r(GetRequest,8F,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:
+SF:\x20Fri,\x2027\x20Feb\x202026\x2003:39:19\x20GMT\r\nContent-Length:\x20
+SF:19\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page
+SF:\x20Not\x20Found")%r(HTTPOptions,8F,"HTTP/1\.0\x20404\x20Not\x20Found\r
+SF:\nDate:\x20Fri,\x2027\x20Feb\x202026\x2003:39:19\x20GMT\r\nContent-Leng
+SF:th:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\
+SF:x20Page\x20Not\x20Found")%r(RTSPRequest,67,"HTTP/1\.1\x20400\x20Bad\x20
+SF:Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:
+SF:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Help,67,"HTTP/1\.1\x20400\x2
+SF:0Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nCon
+SF:nection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(SSLSessionReq,67,"HT
+SF:TP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20cha
+SF:rset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Fou
+SF:rOhFourRequest,8F,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Fri,\x2
+SF:027\x20Feb\x202026\x2003:39:34\x20GMT\r\nContent-Length:\x2019\r\nConte
+SF:nt-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20
+SF:Found")%r(LPDString,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-T
+SF:ype:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400
+SF:\x20Bad\x20Request")%r(SIPOptions,67,"HTTP/1\.1\x20400\x20Bad\x20Reques
+SF:t\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20cl
+SF:ose\r\n\r\n400\x20Bad\x20Request")%r(Socks5,67,"HTTP/1\.1\x20400\x20Bad
+SF:\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnect
+SF:ion:\x20close\r\n\r\n400\x20Bad\x20Request")%r(OfficeScan,A3,"HTTP/1\.1
+SF:\x20400\x20Bad\x20Request:\x20missing\x20required\x20Host\x20header\r\n
+SF:Content-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r
+SF:\n\r\n400\x20Bad\x20Request:\x20missing\x20required\x20Host\x20header");
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 2222 (0.0.8.174)
+Host is up (0.060s latency).
+All 65535 scanned ports on 2222 (0.0.8.174) are in ignored states.
+Not shown: 65535 closed tcp ports (reset)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Feb 26 22:40:08 2026 -- 2 IP addresses (2 hosts up) scanned in 65.48 seconds
