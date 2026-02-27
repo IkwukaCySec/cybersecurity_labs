@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Metasploit attacks (via WAF on 8888)
+
+msfconsole -q
+use exploit/multi/http/dvwa_sqli_bypass
+set RHOSTS 127.0.0.1
+set RPORT 8888
+set TARGETURI /login.php
+run
