@@ -1,0 +1,36 @@
+--a1b2c3d4e5f6-A--
+[27/Feb/2026:18:45:12 +0000] VxY7z8aBcD9eF0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z 127.0.0.1 54321 172.18.0.2 80
+--a1b2c3d4e5f6-B--
+GET /vulnerabilities/sqli/?id=1%27+OR+1%3D1+--+&Submit=Submit HTTP/1.1
+Host: localhost:8888
+User-Agent: Mozilla/5.0 (sqlmap/1.8.3)
+Cookie: PHPSESSID=abc123; security=low
+--a1b2c3d4e5f6-F--
+0
+--a1b2c3d4e5f6-H--
+Message: Warning. detected SQLi using libinjection. [id "942100"] [msg "SQL Injection Attack Detected"] [severity "CRITICAL"] [tag "OWASP_CRS/WEB_ATTACK/SQLI"]
+Message: Access denied with code 403 (phase 2). Operator GE matched 5 at TX:anomaly_score. [id "949110"] [msg "Inbound Anomaly Score Exceeded"]
+Action: Blocked
+--a1b2c3d4e5f6-Z--
+
+--b9c8d7e6f5g4-A--
+[27/Feb/2026:18:46:03 +0000] AbCdEfGhIjKlMnOpQrStUvWxYz1234567890 127.0.0.1 54322 172.18.0.2 80
+--b9c8d7e6f5g4-B--
+GET /vulnerabilities/xss_r/?name=%3Cscript%3Ealert%28%27XSS%27%29%3C%2Fscript%3E HTTP/1.1
+Host: localhost:8888
+User-Agent: Mozilla/5.0 (XSS Test)
+--b9c8d7e6f5g4-H--
+Message: Warning. XSS Attack Detected via libinjection. [id "941100"] [msg "XSS Attack Detected"] [severity "CRITICAL"]
+Message: Access denied with code 403 (phase 2). [id "949110"]
+Action: Blocked
+--b9c8d7e6f5g4-Z--
+
+--c2d3e4f5g6h7-A--
+[27/Feb/2026:18:47:19 +0000] XxYyZz1234567890abcdef 127.0.0.1 54323 172.18.0.2 80
+--c2d3e4f5g6h7-B--
+GET /../../etc/passwd HTTP/1.1
+Host: localhost:8888
+--c2d3e4f5g6h7-H--
+Message: Warning. Path Traversal Attack Detected. [id "930120"] [msg "Restricted File Access Attempt"]
+Message: Access denied with code 403
+--c2d3e4f5g6h7-Z--
