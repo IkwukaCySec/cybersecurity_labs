@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Test the command below
+
+ssh root@localhost -p 2222
