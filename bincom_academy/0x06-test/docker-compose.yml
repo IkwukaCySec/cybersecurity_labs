@@ -23,7 +23,7 @@ services:
     environment:
       - PROXY=1
       - BACKEND=http://dvwa:80
-      - PARANOIA=1                # 1 = low, 2 = medium (start low)
+      - PARANOIA=2               # 1 = low, 2 = medium (start low)
     volumes:
       - ./waf-logs:/var/log/modsecurity
     depends_on:
