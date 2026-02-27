@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Brute-force honeypot with Hydra
+
+hydra -l admin -P /usr/share/wordlists/rockyou.txt ssh://localhost:2222 -t 4 > scans/hydra-log.txt
