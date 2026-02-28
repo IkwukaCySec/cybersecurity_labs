@@ -58,3 +58,43 @@ Most chapters assume you have a safe testing environment. Recommended setup:
    cd gray-hat-hacking
 
 ```
+
+## 🛠 Requirements
+
+- Kali Linux / Parrot OS / other pentest distro (2024+ rolling release recommended)
+- Python 3.9+, gcc, make, nasm, gdb, ghidra, radare2, cutter, etc.
+- VirtualBox / VMware / Docker
+- **(Optional)** Windows VMs for exploit development (Windows 10/11 debugging setup)
+
+## ⚠️ Responsible Use
+
+- **Only** run exploits against lab machines you control.
+- Do **not** use this code in production environments without explicit written authorization.
+- Report newly discovered 0-days responsibly (follow coordinated vulnerability disclosure policies — see resources like CERT/CC or the project's own VDP if applicable).
+
+## 🙌 Contributing
+
+We welcome contributions in the following areas:
+
+- Fixes to outdated code (tools, APIs, and exploits change quickly)
+- Improved lab automation (Docker Compose, Ansible playbooks, etc.)
+- Modernized exploits that still teach the original concepts from the book
+- New write-ups, blog links, or references that align with chapter topics
+
+**Please open an issue first** to discuss major changes or new additions before submitting a pull request.
+
+## 📜 License
+
+- **Code**: MIT License (see [LICENSE](LICENSE) file)
+- **Documentation & markdown files**: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+- **Book content**: Remains © McGraw Hill Education — this repository contains only companion materials, PoC code, labs, and community contributions.
+
+## 🔗 Official & Useful Links
+
+- [Publisher page (McGraw Hill)](https://www.mheducation.com/highered/product/gray-hat-hacking-ethical-hacker-s-handbook-sixth-edition-harper/M9781264268948.html)
+- [Amazon (Sixth Edition)](https://www.amazon.com/Gray-Hat-Hacking-Ethical-Handbook/dp/1264268947)
+- [O'Reilly platform (eBook access)](https://www.oreilly.com/library/view/gray-hat-hacking/9781264268955/)
+
+Happy (and ethical) hacking! 🛡️
+
+*Last updated: March 2026*
