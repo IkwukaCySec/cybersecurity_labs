@@ -95,6 +95,8 @@ We welcome contributions in the following areas:
 - [Amazon (Sixth Edition)](https://www.amazon.com/Gray-Hat-Hacking-Ethical-Handbook/dp/1264268947)
 - [O'Reilly platform (eBook access)](https://www.oreilly.com/library/view/gray-hat-hacking/9781264268955/)
 
-Happy (and ethical) hacking! 🛡️
+**Passionately Written By: Ikwuka Okoye (IkwukaCySec)**
+
+**Happy (and ethical) hacking! 🛡️**
 
 *Last updated: March 2026*
