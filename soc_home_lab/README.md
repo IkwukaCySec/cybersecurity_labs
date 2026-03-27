@@ -1,3 +1,0 @@
-# SOC Home Lab
-
----
